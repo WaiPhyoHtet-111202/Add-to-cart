@@ -100,12 +100,6 @@ function renderProducts() {
       return sum + parseFloat(product.total_price);
     }, 0);
     document.getElementById("order-total").innerText = `$${total}`;
-    // products.forEach((product) => {
-    //   if (product.quantity > 0) {
-    //     let add_qty = document.getElementById(`qty-${product.product_id}`);
-    //     add_qty.classList.remove("hidden");
-    //   }
-    // });
   } else {
     document.getElementById("order").innerText = 0;
     cart_list.classList.add("hidden");
@@ -168,18 +162,15 @@ function deleteOrder(id) {
     if (id === Number(product.product_id)) {
       count = count - product.quantity;
       let item_count = document.getElementById("order");
-      let deleteIndex = products.indexOf(product);
       let add_id = `add-${product.product_id}`;
       let increase = document.getElementById(add_id);
       increase.previousElementSibling.innerText = 0;
       let add_qty = document.getElementById(`qty-${product.product_id}`);
-      let originalAddBtn = document.querySelector(`[data-id="${id}"]`);
       add_qty.classList.add("hidden");
-      if (originalAddBtn) {
-        originalAddBtn.classList.remove("hidden");
-      }
+      let button = document.getElementById(`button-${id}`);
+      button.classList.remove("hidden");
       item_count.innerText = count;
-      product.quantity = 0;
+      let deleteIndex = products.indexOf(product);
       products.splice(deleteIndex, 1);
       renderProducts();
       return;
