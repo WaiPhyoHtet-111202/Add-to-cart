@@ -97,9 +97,10 @@ function renderProducts() {
       `;
       menu_list.appendChild(li);
     });
-    let total = products.reduce((sum, product) => {
+    total = products.reduce((sum, product) => {
       return sum + parseFloat(product.total_price);
     }, 0);
+    console.log(typeof total);
     document.getElementById("order-total").innerText = `$${total}`;
   } else {
     document.getElementById("order").innerText = 0;
@@ -116,10 +117,12 @@ function confirm() {
   let total = [];
   confirm.onclick = () => {
     orderModel.classList.remove("hidden");
+    total = products.reduce((sum, product) => {
+      return sum + parseFloat(product.total_price);
+    }, 0);
+    total_price.innerText = total;
     orderList.innerHTML = "";
     products.forEach((product) => {
-      total.push(product.total_price);
-      console.log(total);
       let li = document.createElement("li");
       li.innerHTML = `
         <div class="flex flex-row justify-between">
@@ -134,9 +137,6 @@ function confirm() {
       orderList.appendChild(li);
       return;
     });
-    total_price.innerText = total.reduce((sum, num) => {
-      return sum + num;
-    }, 0);
   };
 }
 
