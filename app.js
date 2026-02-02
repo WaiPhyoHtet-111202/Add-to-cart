@@ -102,6 +102,12 @@ function renderProducts() {
       return sum + parseFloat(product.total_price);
     }, 0);
     document.getElementById("order-total").innerText = `$${total}`;
+    products.forEach((product) => {
+      if (product.quantity > 0) {
+        let add_qty = document.getElementById(`qty-${product.product_id}`);
+        add_qty.classList.remove("hidden");
+      }
+    });
   } else {
     document.getElementById("order").innerText = 0;
     cart_list.classList.add("hidden");
