@@ -16,24 +16,17 @@ function add_product() {
       let price = Number(btn.getAttribute("data-price"));
       let item_count_display = document.getElementById("order");
 
-      let existingProduct = products.find((p) => p.product_id === product_id);
+      let product_data = {
+        product_id,
+        product: product_name,
+        price: price,
+        quantity: 1,
+        total_price: price,
+      };
+      products.push(product_data);
 
-      if (existingProduct) {
-        existingProduct.quantity++;
-        existingProduct.total_price =
-          existingProduct.quantity * existingProduct.price;
-      } else {
-        let product_data = {
-          product_id,
-          product: product_name,
-          price: price,
-          quantity: 1,
-          total_price: price,
-        };
-        products.push(product_data);
+      quantityControls(product_id);
 
-        setupQuantityControls(product_id);
-      }
       count++;
       item_count_display.innerText = count;
       renderProducts();
@@ -41,7 +34,7 @@ function add_product() {
   }
 }
 
-function setupQuantityControls(product_id) {
+function quantityControls(product_id) {
   let increase = document.getElementById(`add-${product_id}`);
   let decrease = document.getElementById(`minus-${product_id}`);
 
