@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/output.css" />
+
+    <title>Frontend Mentor | Product list with cart</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- <style>
+      .add-btn:hover {
+        color: red;
+      }
+    </style> -->
+  </head>
+  <body>
+    <main class="flex flex-col lg:flex-row p-10 gap-5 bg-red-50">
+      <section
+        class="lg:w-3/5 flex flex-col gap-5 z-3 justify-center items-center w-full"
+      >
+        <h1 class="font-bold text-2xl">Desserts</h1>
+        <div class="flex lg:flex-row flex-col gap-5 w-full">
+          <article class="relative">
+            <img
+              class="lg:hidden md:hidden w-full"
+              src="/assets/images/image-waffle-mobile.jpg"
+              src="waffle-mobile"
+            />
+            <img
+              class="hidden md:hidden lg:block w-full"
+              src="/assets/images/image-waffle-tablet.jpg"
+              alt="waffle"
+            />
+
+            <img
+              class="hidden md:block lg:hidden w-full"
+              src="/assets/images/image-waffle-desktop.jpg"
+              al="waffle-tablet"
+            />
+            <button
+              type="button"
+              id="btn-1"
+              class="border rounded-2xl w-40 h-9 add-btn hover:text-red-500"
+              data-product="Waffle with Barries"
+              data-price="6.50"
+              data-id="1"
+              data-button="waffle"
+            >
+              <img
+                class="inline"
+                src="/assets/images/icon-add-to-cart.svg"
+                alt="cart"
+              />
+              <span>Add to Cart</span>
+            </button>
+            <div
+              class="border rounded-3xl flex justify-between items-center w-40 h-9 bg-red-500"
+              id="waffle"
+            >
+              <button class="m-3" id="minus-1">
+                <i class="fa-solid fa-circle-minus"></i>
+              </button>
+              <span class="text-white"> 1 </span>
+              <button class="m-3" id="add-1">
+                <i class="fa-solid fa-circle-plus"></i>
+              </button>
+            </div>
+            <div class="mt-5">
+              <span class="text-gray-500">Waffle</span>
+              <p class="font-bold product">Waffle with Barries</p>
+              <h5 class="text-red-500 price">$6.50</h5>
+            </div>
+          </article>
+          <article>
+            <img
+              class="md:hidden w-full lg:hidden"
+              src="/assets/images/image-creme-brulee-mobile.jpg"
+              alt="creme-mobile"
+            />
+
+            <img
+              class="hidden md:block lg:hidden w-full"
+              src="/assets/images/image-creme-brulee-tablet.jpg"
+              alt="creme-tablet"
+            />
+            <img
+              class="hidden lg:block w-full"
+              src="/assets/images/image-creme-brulee-desktop.jpg"
+              alt="Creme"
+            />
+            <button
+              type="button"
+              class="border rounded-2xl w-40 h-9 relative add-btn hover:text-red-500"
+              data-product="Vanilla Bean Crème Brûlée"
+              data-price="7.00"
+              data-id="2"
+              data-button="Crème"
+            >
+              <img
+                class="absolute left-2"
+                src="/assets/images/icon-add-to-cart.svg"
+                alt="cart"
+              />Add to Cart
+            </button>
+            <div
+              class="border rounded-3xl flex justify-between items-center w-40 h-9 bg-red-500 add-qty"
+              id="Crème"
+            >
+              <button class="m-3" id="minus-2">
+                <i class="fa-solid fa-circle-minus"></i>
+              </button>
+              <span class="text-white"> 1 </span>
+              <button class="m-3" id="add-2">
+                <i class="fa-solid fa-circle-plus"></i>
+              </button>
+            </div>
+            <div class="mt-5">
+              <span class="text-gray-500">Crème Brûlée</span>
+              <p class="font-bold product">Vanilla Bean Crème Brûlée</p>
+              <h5 class="text-red-500 price">$7.00</h5>
+            </div>
+          </article>
+          <article>
+            <img
+              class="md:hidden lg:hidden w-full"
+              src="/assets/images/image-macaron-mobile.jpg"
+              alt="macaron-mobile"
+            />
+            <img
+              class="md:block w-full hidden lg:hidden"
+              src="/assets/images/image-macaron-tablet.jpg"
+              alt="macaron-tablet"
+            />
+            <img
+              class="hidden lg:block w-full"
+              src="/assets/images/image-macaron-desktop.jpg"
+              alt="macaron"
+            />
+            <button
+              type="button"
+              class="border rounded-2xl w-40 h-9 relative add-btn hover:text-red-500"
+              data-product="Mix of Five Macaron"
+              data-price="8.00"
+              data-id="3"
+              data-button="Macaron"
+            >
+              <img
+                class="absolute left-2"
+                src="/assets/images/icon-add-to-cart.svg"
+                alt="cart"
+              />Add to Cart
+            </button>
+            <div
+              class="border rounded-3xl flex justify-between items-center w-40 h-9 bg-red-500 add-qty"
+              id="Macaron"
+            >
+              <button class="m-3" id="minus-3">
+                <i class="fa-solid fa-circle-minus"></i>
+              </button>
+              <span class="text-white"> 1 </span>
+              <button class="m-3" id="add-3">
+                <i class="fa-solid fa-circle-plus"></i>
+              </button>
+            </div>
+            <div class="mt-5">
+              <span class="text-gray-500">Macaron</span>
+              <p class="font-bold product">Mix of Five Macaron</p>
+              <h5 class="text-red-500 price">$8.00</h5>
+            </div>
+          </article>
+        </div>
+        <div class="flex flex-col lg:flex-row gap-5 w-full">
+          <article>
+            <img
+              src="/assets/images/image-tiramisu-mobile.jpg"
+              class="md:hidden lg:hidden w-full"
+            />
+            <img
+              class="md:block w-full hidden lg:hidden"
+              src="/assets/images/image-tiramisu-tablet.jpg"
+              alt="tiramisu-tablet"
+            />
+            <img
+              class="hidden lg:block md:hidden w-full"
+              src="/assets/images/image-tiramisu-desktop.jpg"
+              alt="tiramisu"
+            />
+            <button
+              type="button"
+              class="border rounded-2xl w-40 h-9 relative add-btn hover:text-red-500"
+              data-product="Classic Tiramisu"
+              data-price="5.50"
+              data-id="4"
+              data-button="Tiramisu"
+            >
+              <img
+                class="absolute left-2"
+                src="/assets/images/icon-add-to-cart.svg"
+                alt="cart"
+              />Add to Cart
+            </button>
+            <div
+              class="border rounded-3xl flex justify-between items-center w-40 h-9 bg-red-500 add-qty"
+              id="Tiramisu"
+            >
+              <button class="m-3" id="minus-4">
+                <i class="fa-solid fa-circle-minus"></i>
+              </button>
+              <span class="text-white"> 1 </span>
+              <button class="m-3" id="add-4">
+                <i class="fa-solid fa-circle-plus"></i>
+              </button>
+            </div>
+            <div class="mt-5">
+              <span class="text-gray-500">Tiramisu</span>
+              <p class="font-bold product">Classic Tiramisu</p>
+              <h5 class="text-red-500 price">$5.50</h5>
+            </div>
+          </article>
+          <article>
+            <img
+              class="md:hidden lg:hidden w-full"
+              src="/assets/images/image-baklava-mobile.jpg"
+              alt="baklava-mobile"
+            />
+            <img
+              class="md:block hidden lg:hidden w-full"
+              src="/assets/images/image-baklava-tablet.jpg"
+              alt="baklava-tablet"
+            />
+            <img
+              class="hidden lg:block"
+              src="/assets/images/image-baklava-desktop.jpg"
+              alt="baklava"
+            />
+            <button
+              type="button"
+              class="border rounded-2xl w-40 h-9 relative add-btn hover:text-red-500"
+              data-product="Pistachio Baklava"
+              data-price="4.00"
+              data-id="5"
+              data-button="Baklava"
+            >
+              <img
+                class="absolute left-2"
+                src="/assets/images/icon-add-to-cart.svg"
+                alt="cart"
+              />Add to Cart
+            </button>
+            <div
+              class="border rounded-3xl flex justify-between items-center w-40 h-9 bg-red-500 add-qty"
+              id="Baklava"
+            >
+              <button class="m-3" id="minus-5">
+                <i class="fa-solid fa-circle-minus"></i>
+              </button>
+              <span class="text-white"> 1 </span>
+              <button class="m-3" id="add-5">
+                <i class="fa-solid fa-circle-plus"></i>
+              </button>
+            </div>
+            <div class="mt-5">
+              <span class="text-gray-500">Baklava</span>
+              <p class="font-bold product">Pistachio Baklava</p>
+              <h5 class="text-red-500 price">$4.00</h5>
+            </div>
+          </article>
+          <article>
+            <img
+              class="md:hidden lg:hidden w-full"
+              src="/assets/images/image-meringue-mobile.jpg"
+              alt="merginue-mobile"
+            />
+            <img
+              class="md:block lg:hidden hidden w-full"
+              src="/assets/images/image-meringue-tablet.jpg"
+              alt="meringue-tablet"
+            />
+
+            <img
+              class="hidden lg:block"
+              src="/assets/images/image-meringue-desktop.jpg"
+              alt="meringue"
+            />
+            <button
+              type="button"
+              class="border rounded-2xl w-40 h-9 relative add-btn hover:text-red-500"
+              data-product="Lemon Meringue Pie"
+              data-price="5.00"
+              data-id="6"
+              data-button="Pie"
+            >
+              <img
+                class="absolute left-2"
+                src="/assets/images/icon-add-to-cart.svg"
+                alt="cart"
+              />Add to Cart
+            </button>
+            <div
+              class="border rounded-3xl flex justify-between items-center w-40 h-9 bg-red-500 add-qty"
+              id="Pie"
+            >
+              <button class="m-3" id="minus-6">
+                <i class="fa-solid fa-circle-minus"></i>
+              </button>
+              <span class="text-white"> 1 </span>
+              <button class="m-3" id="add-6">
+                <i class="fa-solid fa-circle-plus"></i>
+              </button>
+            </div>
+            <div class="mt-5">
+              <span class="text-gray-500">Pie</span>
+              <p class="font-bold product">Lemon Meringue Pie</p>
+              <h5 class="text-red-500 price">$5.00</h5>
+            </div>
+          </article>
+        </div>
+        <div class="flex flex-col lg:flex-row gap-5 w-full">
+          <article>
+            <img
+              class="md:hidden lg:hidden w-full"
+              src="/assets/images/image-cake-mobile.jpg"
+              alt="cake-mobile"
+            />
+            <img
+              class="md:block hidden lg:hidden w-full"
+              src="/assets/images/image-cake-tablet.jpg"
+              alt="cake-tablet"
+            />
+            <img
+              class="hidden lg:block"
+              src="/assets/images/image-cake-desktop.jpg"
+              alt="cake"
+            />
+            <button
+              type="button"
+              class="border rounded-2xl w-40 h-9 relative add-btn hover:text-red-500"
+              data-product="Red Velvet Cake"
+              data-price="4.50"
+              data-id="7"
+              data-button="Cake"
+            >
+              <img
+                class="absolute left-2"
+                src="/assets/images/icon-add-to-cart.svg"
+                alt="cart"
+              />Add to Cart
+            </button>
+            <div
+              class="border rounded-3xl flex justify-between items-center w-40 h-9 bg-red-500 add-qty"
+              id="Cake"
+            >
+              <button class="m-3" id="minus-7">
+                <i class="fa-solid fa-circle-minus"></i>
+              </button>
+              <span class="text-white"> 1 </span>
+              <button class="m-3" id="add-7">
+                <i class="fa-solid fa-circle-plus"></i>
+              </button>
+            </div>
+            <div class="mt-5">
+              <span class="text-gray-500">Cake</span>
+              <p class="font-bold">Red Velvet Cake</p>
+              <h5 class="text-red-500">$4.50</h5>
+            </div>
+          </article>
+          <article>
+            <img
+              class="lg:hidden md:hidden w-full"
+              src="/assets/images/image-brownie-mobile.jpg"
+              alt="brownie-mobile"
+            />
+            <img
+              class="md:block lg:hidden hidden w-full"
+              src="/assets/images/image-brownie-tablet.jpg"
+              alt="brownie-tablet"
+            />
+
+            <img
+              class="hidden lg:block"
+              src="/assets/images/image-brownie-desktop.jpg"
+              alt="brownie"
+            />
+            <button
+              type="button"
+              class="border rounded-2xl w-40 h-9 relative add-btn hover:text-red-500"
+              data-product="Salted Caramel Brownie"
+              data-price="4.50"
+              data-id="8"
+              data-button="Brownie"
+            >
+              <img
+                class="absolute left-2"
+                src="/assets/images/icon-add-to-cart.svg"
+                alt="cart"
+              />Add to Cart
+            </button>
+            <div
+              class="border rounded-3xl flex justify-between items-center w-40 h-9 bg-red-500 add-qty"
+              id="Brownie"
+            >
+              <button class="m-3" id="minus-8">
+                <i class="fa-solid fa-circle-minus"></i>
+              </button>
+              <span class="text-white"> 1 </span>
+              <button class="m-3" id="add-8">
+                <i class="fa-solid fa-circle-plus"></i>
+              </button>
+            </div>
+            <div class="mt-5">
+              <span class="text-gray-500">Brownie</span>
+              <p class="font-bold">Salted Caramel Brownie</p>
+              <h5 class="text-red-500">$4.50</h5>
+            </div>
+          </article>
+          <article>
+            <img
+              class="md:hidden lg:hidden w-full"
+              src="/assets/images/image-panna-cotta-mobile.jpg"
+              alt="panna-mobile"
+            />
+            <img
+              class="md:block lg:hidden hidden w-full"
+              src="/assets/images/image-panna-cotta-tablet.jpg"
+              alt="panna-tablet"
+            />
+            <img
+              class="hidden lg:block"
+              src="/assets/images/image-panna-cotta-desktop.jpg"
+              alt="panna"
+            />
+            <button
+              type="button"
+              class="border rounded-2xl w-40 h-9 relative add-btn hover:text-red-500"
+              data-product="Vanilla Panna Cotta"
+              data-price="6.50"
+              data-id="9"
+              data-button="Panna"
+            >
+              <img
+                class="absolute left-2"
+                src="/assets/images/icon-add-to-cart.svg"
+                alt="cart"
+              />Add to Cart
+            </button>
+            <div
+              class="border rounded-3xl flex justify-between items-center w-40 h-9 bg-red-500 add-qty"
+              id="Panna"
+            >
+              <button class="m-3" id="minus-9">
+                <i class="fa-solid fa-circle-minus"></i>
+              </button>
+              <span class="text-white"> 1 </span>
+              <button class="m-3" id="add-9">
+                <i class="fa-solid fa-circle-plus"></i>
+              </button>
+            </div>
+            <div class="mt-5">
+              <span class="text-gray-500">Panna Cotta</span>
+              <p class="font-bold">Vanilla Panna Cotta</p>
+              <h5 class="text-red-500">$6.50</h5>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="bg-white w-2/5 sticky z-0">
+        <div class="bg-white-500 h-auto w-full flex flex-col justify-center">
+          <h1 class="text-red-500 m-5 text-3xl">
+            Your Cart(<span id="order">0</span>)
+          </h1>
+          <div id="empty" class="flex-col flex items-center justify-center">
+            <img
+              class="h-37.5"
+              src="/assets/images/illustration-empty-cart.svg"
+              alt="empty-cart"
+            />
+            <p>Your added items will appear here</p>
+          </div>
+          <div id="cart" class="flex flex-col justify-center">
+            <div class="flex justify-between items-center w-full">
+              <ul
+                id="menu-list"
+                class="p-5 mb-5 w-full divide-y divide-gray-300"
+              ></ul>
+            </div>
+            <div class="flex flex-row justify-between items-center">
+              <h1 class="ms-5">Order Total</h1>
+              <span class="me-5 font-bold" id="order-total"> </span>
+            </div>
+            <div class="flex flex-row items-center justify-center m-5">
+              <img
+                src="/assets/images/icon-carbon-neutral.svg"
+                alt="carbon-netural"
+              />
+              <p>
+                This is a <span class="font-bold">carbon-netural</span> delivery
+              </p>
+            </div>
+            <div class="flex justify-center items-center">
+              <button
+                class="border w-70 h-10 rounded-3xl bg-orange-600"
+                id="order-confirm"
+              >
+                Confirm Order
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
+
+<!-- Add to Cart Pistachio Baklava Baklava
+    4.00 Add to Cart Lemon Meringue Pie Pie 5.00 Add to Cart Red Velvet Cake
+    Cake 4.50 Add to Cart Salted Caramel Brownie Brownie 4.50 Add to Cart
+    Vanilla Panna Cotta Panna Cotta 6.50 Add to Cart Your Cart  Quantity
+    Your added items will appear here -->
