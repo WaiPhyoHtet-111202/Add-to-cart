@@ -134,7 +134,9 @@ function confirm() {
       orderList.appendChild(li);
       return;
     });
-    total_price.innerText = total;
+    total_price.innerText = total.reduce((sum, num) => {
+      return sum + num;
+    }, 0);
   };
 }
 
