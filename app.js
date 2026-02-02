@@ -10,62 +10,62 @@ cart_list.classList.add("hidden");
 
 function add_product() {
   for (let btn of add_button) {
-    btn.addEventListener("click", addProduct);
-    function addProduct() {
-      // btn.classList.add("hidden");
-      let product = btn.getAttribute("data-product");
-      let price = btn.getAttribute("data-price");
+    btn.onclick = function () {
       let product_id = btn.getAttribute("data-id");
-      let item_count = document.getElementById("order");
-      qty_button = btn.getAttribute("data-button");
-      let product_data = {
-        product_id,
-        product,
-        price,
-        quantity: 1,
-        total_price: price,
-      };
+      let product_name = btn.getAttribute("data-product");
+      let price = Number(btn.getAttribute("data-price"));
+      let item_count_display = document.getElementById("order");
+
+      let existingProduct = products.find((p) => p.product_id === product_id);
+
+      if (existingProduct) {
+        existingProduct.quantity++;
+        existingProduct.total_price =
+          existingProduct.quantity * existingProduct.price;
+      } else {
+        let product_data = {
+          product_id,
+          product: product_name,
+          price: price,
+          quantity: 1,
+          total_price: price,
+        };
+        products.push(product_data);
+
+        setupQuantityControls(product_id);
+      }
       count++;
-      item_count.innerText = count;
-      let add_id = `add-${product_id}`;
-      let minus_id = `minus-${product_id}`;
-      let increase = document.getElementById(add_id);
-      let decrease = document.getElementById(minus_id);
-      increase.addEventListener("click", () => {
-        for (product of products) {
-          if (product_data.product_id === product.product_id) {
-            product.quantity++;
-            count++;
-            console.log(product);
-            increase.previousElementSibling.innerText = product.quantity;
-            product.total_price = String(product.quantity * product.price);
-            renderProducts();
-            return;
-          }
-        }
-      });
-      decrease.addEventListener("click", () => {
-        products.forEach((product) => {
-          if (product.product_id === product_data.product_id) {
-            if (product.quantity === 0) {
-              alert("Item can't be less than zero");
-              return;
-            }
-            product.quantity--;
-            count--;
-            decrease.nextElementSibling.innerText = product.quantity;
-            product.total_price = String(product.total_price - product.price);
-            renderProducts();
-            return;
-          }
-        });
-      });
-      products.push(product_data);
-      console.log(products);
+      item_count_display.innerText = count;
       renderProducts();
-      return;
-    }
+    };
   }
+}
+
+function setupQuantityControls(product_id) {
+  let increase = document.getElementById(`add-${product_id}`);
+  let decrease = document.getElementById(`minus-${product_id}`);
+
+  increase.onclick = () => {
+    let item = products.find((p) => p.product_id === product_id);
+    item.quantity++;
+    item.total_price = item.quantity * item.price;
+    count++;
+    document.getElementById("order").innerText = count;
+    increase.previousElementSibling.innerText = item.quantity;
+    renderProducts();
+  };
+
+  decrease.onclick = () => {
+    let item = products.find((p) => p.product_id === product_id);
+    if (item.quantity > 0) {
+      item.quantity--;
+      item.total_price = item.quantity * item.price;
+      count--;
+      document.getElementById("order").innerText = count;
+      decrease.nextElementSibling.innerText = item.quantity;
+      renderProducts();
+    }
+  };
 }
 
 function renderProducts() {
@@ -130,6 +130,5 @@ function deleteOrder(id) {
     }
   });
 }
-
 
 add_product();
