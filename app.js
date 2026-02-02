@@ -2,7 +2,6 @@ const add_button = document.getElementsByClassName("add-btn");
 const add_qty = document.getElementsByClassName("add-qty");
 let count = 0;
 let products = [];
-let qty_button = null;
 let total = 0;
 const empty_cart = document.getElementById("empty");
 const cart_list = document.getElementById("cart");
@@ -66,9 +65,8 @@ function quantityControls(product_id) {
       add_qty.classList.add("hidden");
       let findIndex = products.indexOf(item);
       products.splice(findIndex, 1);
-      for (let btn of add_button) {
-        btn.classList.remove("hidden");
-      }
+      let button = document.getElementById(`button-${item.product_id}`);
+      button.classList.remove("hidden");
     }
   };
 }
@@ -102,12 +100,12 @@ function renderProducts() {
       return sum + parseFloat(product.total_price);
     }, 0);
     document.getElementById("order-total").innerText = `$${total}`;
-    products.forEach((product) => {
-      if (product.quantity > 0) {
-        let add_qty = document.getElementById(`qty-${product.product_id}`);
-        add_qty.classList.remove("hidden");
-      }
-    });
+    // products.forEach((product) => {
+    //   if (product.quantity > 0) {
+    //     let add_qty = document.getElementById(`qty-${product.product_id}`);
+    //     add_qty.classList.remove("hidden");
+    //   }
+    // });
   } else {
     document.getElementById("order").innerText = 0;
     cart_list.classList.add("hidden");
