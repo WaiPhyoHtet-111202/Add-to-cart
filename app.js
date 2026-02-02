@@ -67,6 +67,7 @@ function quantityControls(product_id) {
       products.splice(findIndex, 1);
       let button = document.getElementById(`button-${item.product_id}`);
       button.classList.remove("hidden");
+      renderProducts();
     }
   };
 }
@@ -112,12 +113,13 @@ function confirm() {
   const orderModel = document.getElementById("order-model");
   const orderList = document.getElementById("modal-order-list");
   const total_price = document.getElementById("total");
-  let total = 0;
+  let total = [];
   confirm.onclick = () => {
     orderModel.classList.remove("hidden");
     orderList.innerHTML = "";
     products.forEach((product) => {
-      total = total + product.total_price;
+      total.push(product.total_price);
+      console.log(total);
       let li = document.createElement("li");
       li.innerHTML = `
         <div class="flex flex-row justify-between">
@@ -130,6 +132,7 @@ function confirm() {
        </div>
      `;
       orderList.appendChild(li);
+      return;
     });
     total_price.innerText = total;
   };
