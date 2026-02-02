@@ -1,4 +1,5 @@
 const add_button = document.getElementsByClassName("add-btn");
+const add_qty = document.getElementsByClassName("add-qty");
 let count = 0;
 let products = [];
 let qty_button = null;
@@ -16,6 +17,8 @@ function add_product() {
       let product_name = btn.getAttribute("data-product");
       let price = Number(btn.getAttribute("data-price"));
       let item_count_display = document.getElementById("order");
+      let add_qty = document.getElementById(`qty-${product_id}`);
+      add_qty.classList.remove("hidden");
       let product_data = {
         product_id,
         product: product_name,
@@ -58,6 +61,15 @@ function quantityControls(product_id) {
       decrease.nextElementSibling.innerText = item.quantity;
       renderProducts();
     }
+    if (item.quantity === 0) {
+      let add_qty = document.getElementById(`qty-${item.product_id}`);
+      add_qty.classList.add("hidden");
+      let findIndex = products.indexOf(item);
+      products.splice(findIndex, 1);
+      for (let btn of add_button) {
+        btn.classList.remove("hidden");
+      }
+    }
   };
 }
 
@@ -73,9 +85,8 @@ function renderProducts() {
     menu_list.innerHTML = "";
     products.forEach((product) => {
       let li = document.createElement("li");
-      li.innerHTML = `
-      <div class="flex flex-row justify-between items-center  w-full relative mt-5">
-        <h1>${product.product}</h1> 
+      li.innerHTML = `<div class="flex flex-row justify-between items-center  w-full relative mt-5">
+      <h1>${product.product}</h1> 
       <button onclick="deleteOrder(${product.product_id})" class="absolute right-5">
             <i class="fa-regular fa-circle-xmark fa-2x"></i>
         </button>
@@ -98,13 +109,55 @@ function renderProducts() {
   }
 }
 
-// function orderConfirm() {
-//   const confirm = document.getElementById("order-confirm");
-//   confirm.addEventListener("click", () => {
-//     products = [];
-//     renderProducts();
-//   });
-// }
+function confirm() {
+  const confirm = document.getElementById("order-confirm");
+  const orderModel = document.getElementById("order-model");
+  const orderList = document.getElementById("modal-order-list");
+  const total_price = document.getElementById("total");
+  let total = 0;
+  confirm.onclick = () => {
+    orderModel.classList.remove("hidden");
+    orderList.innerHTML = "";
+    products.forEach((product) => {
+      total = total + product.total_price;
+      let li = document.createElement("li");
+      li.innerHTML = `
+        <div class="flex flex-row justify-between">
+          <div>
+            <h1>${product.product}</h1>
+            <span>${product.quantity}x</span>
+            <span>@${product.price}</span>
+          </div>
+          <h1>$${product.total_price}</h1>
+       </div>
+     `;
+      orderList.appendChild(li);
+    });
+    total_price.innerText = total;
+  };
+}
+
+function newOrder() {
+  const orderModel = document.getElementById("order-model");
+  const starOrder = document.getElementById("new-order");
+  starOrder.onclick = () => {
+    orderModel.classList.add("hidden");
+    products.forEach((product) => {
+      let add_id = `add-${product.product_id}`;
+      let increase = document.getElementById(add_id);
+      increase.previousElementSibling.innerText = 0;
+    });
+    products = [];
+    count = 0;
+    for (let btn of add_button) {
+      btn.classList.remove("hidden");
+    }
+    for (let button of add_qty) {
+      button.classList.add("hidden");
+    }
+    renderProducts();
+  };
+}
 
 function deleteOrder(id) {
   products.forEach((product) => {
@@ -115,7 +168,9 @@ function deleteOrder(id) {
       let add_id = `add-${product.product_id}`;
       let increase = document.getElementById(add_id);
       increase.previousElementSibling.innerText = 0;
+      let add_qty = document.getElementById(`qty-${product.product_id}`);
       let originalAddBtn = document.querySelector(`[data-id="${id}"]`);
+      add_qty.classList.add("hidden");
       if (originalAddBtn) {
         originalAddBtn.classList.remove("hidden");
       }
@@ -129,3 +184,5 @@ function deleteOrder(id) {
 }
 
 add_product();
+confirm();
+newOrder();

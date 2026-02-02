@@ -33,23 +33,22 @@
           <article class="relative">
             <img
               class="lg:hidden md:hidden w-full"
-              src="./assets/images/image-waffle-mobile.jpg"
+              src="./images/image-waffle-mobile.jpg"
               src="waffle-mobile"
             />
             <img
               class="hidden md:hidden lg:block w-full"
-              src="./assets/images/image-waffle-desktop.jpg"
+              src="./images/image-waffle-desktop.jpg"
               alt="waffle"
             />
 
             <img
               class="hidden md:block lg:hidden w-full"
-              src="./assets/images/image-waffle-tablet.jpg"
+              src="./images/image-waffle-tablet.jpg"
               al="waffle-tablet"
             />
             <button
               type="button"
-              id="btn-1"
               class="border rounded-2xl w-40 h-9 add-btn hover:text-red-500"
               data-product="Waffle with Barries"
               data-price="6.50"
@@ -58,14 +57,14 @@
             >
               <img
                 class="inline"
-                src="./assets/images/icon-add-to-cart.svg"
+                src="./images/icon-add-to-cart.svg"
                 alt="cart"
               />
               <span>Add to Cart</span>
             </button>
             <div
-              class="border rounded-3xl flex justify-between items-center w-40 h-9 bg-red-500"
-              id="waffle"
+              class="border rounded-3xl flex justify-between items-center w-40 h-9 bg-red-500 add-qty hidden"
+              id="qty-1"
             >
               <button class="m-3" id="minus-1">
                 <i class="fa-solid fa-circle-minus"></i>
@@ -84,18 +83,18 @@
           <article>
             <img
               class="md:hidden w-full lg:hidden"
-              src="./assets/images/image-creme-brulee-mobile.jpg"
+              src="./images/image-creme-brulee-mobile.jpg"
               alt="creme-mobile"
             />
 
             <img
               class="hidden md:block lg:hidden w-full"
-              src="./assets/images/image-creme-brulee-tablet.jpg"
+              src="./images/image-creme-brulee-tablet.jpg"
               alt="creme-tablet"
             />
             <img
               class="hidden lg:block w-full"
-              src="./assets/images/image-creme-brulee-desktop.jpg"
+              src="./images/image-creme-brulee-desktop.jpg"
               alt="Creme"
             />
             <button
@@ -108,13 +107,13 @@
             >
               <img
                 class="absolute left-2"
-                src="./assets/images/icon-add-to-cart.svg"
+                src="./images/icon-add-to-cart.svg"
                 alt="cart"
               />Add to Cart
             </button>
             <div
-              class="border rounded-3xl flex justify-between items-center w-40 h-9 bg-red-500 add-qty"
-              id="Crème"
+              class="border rounded-3xl flex justify-between items-center w-40 h-9 bg-red-500 hidden add-qty"
+              id="qty-2"
             >
               <button class="m-3" id="minus-2">
                 <i class="fa-solid fa-circle-minus"></i>
@@ -133,17 +132,17 @@
           <article>
             <img
               class="md:hidden lg:hidden w-full"
-              src="./assets/images/image-macaron-mobile.jpg"
+              src="./images/image-macaron-mobile.jpg"
               alt="macaron-mobile"
             />
             <img
               class="md:block w-full hidden lg:hidden"
-              src="./assets/images/image-macaron-tablet.jpg"
+              src="./images/image-macaron-tablet.jpg"
               alt="macaron-tablet"
             />
             <img
               class="hidden lg:block w-full"
-              src="./assets/images/image-macaron-desktop.jpg"
+              src="./images/image-macaron-desktop.jpg"
               alt="macaron"
             />
             <button
@@ -156,13 +155,13 @@
             >
               <img
                 class="absolute left-2"
-                src="./assets/images/icon-add-to-cart.svg"
+                src="./images/icon-add-to-cart.svg"
                 alt="cart"
               />Add to Cart
             </button>
             <div
-              class="border rounded-3xl flex justify-between items-center w-40 h-9 bg-red-500 add-qty"
-              id="Macaron"
+              class="border hidden rounded-3xl flex justify-between items-center w-40 h-9 bg-red-500 add-qty"
+              id="qty-3"
             >
               <button class="m-3" id="minus-3">
                 <i class="fa-solid fa-circle-minus"></i>
@@ -182,17 +181,17 @@
         <div class="flex flex-col lg:flex-row gap-5 w-full">
           <article>
             <img
-              src="./assets/images/image-tiramisu-mobile.jpg"
+              src="./images/image-tiramisu-mobile.jpg"
               class="md:hidden lg:hidden w-full"
             />
             <img
               class="md:block w-full hidden lg:hidden"
-              src="./assets/images/image-tiramisu-tablet.jpg"
+              src="./images/image-tiramisu-tablet.jpg"
               alt="tiramisu-tablet"
             />
             <img
               class="hidden lg:block md:hidden w-full"
-              src="./assets/images/image-tiramisu-desktop.jpg"
+              src="./images/image-tiramisu-desktop.jpg"
               alt="tiramisu"
             />
             <button
@@ -205,13 +204,13 @@
             >
               <img
                 class="absolute left-2"
-                src="./assets/images/icon-add-to-cart.svg"
+                src="./images/icon-add-to-cart.svg"
                 alt="cart"
               />Add to Cart
             </button>
             <div
-              class="border rounded-3xl flex justify-between items-center w-40 h-9 bg-red-500 add-qty"
-              id="Tiramisu"
+              class="border hidden rounded-3xl flex justify-between items-center w-40 h-9 bg-red-500 add-qty"
+              id="qty-4"
             >
               <button class="m-3" id="minus-4">
                 <i class="fa-solid fa-circle-minus"></i>
@@ -230,17 +229,17 @@
           <article>
             <img
               class="md:hidden lg:hidden w-full"
-              src="./assets/images/image-baklava-mobile.jpg"
+              src="./images/image-baklava-mobile.jpg"
               alt="baklava-mobile"
             />
             <img
               class="md:block hidden lg:hidden w-full"
-              src="./assets/images/image-baklava-tablet.jpg"
+              src="./images/image-baklava-tablet.jpg"
               alt="baklava-tablet"
             />
             <img
               class="hidden lg:block"
-              src="./assets/images/image-baklava-desktop.jpg"
+              src="./images/image-baklava-desktop.jpg"
               alt="baklava"
             />
             <button
@@ -253,13 +252,13 @@
             >
               <img
                 class="absolute left-2"
-                src="./assets/images/icon-add-to-cart.svg"
+                src="./images/icon-add-to-cart.svg"
                 alt="cart"
               />Add to Cart
             </button>
             <div
-              class="border rounded-3xl flex justify-between items-center w-40 h-9 bg-red-500 add-qty"
-              id="Baklava"
+              class="border hidden rounded-3xl flex justify-between items-center w-40 h-9 bg-red-500 add-qty"
+              id="qty-5"
             >
               <button class="m-3" id="minus-5">
                 <i class="fa-solid fa-circle-minus"></i>
@@ -278,18 +277,18 @@
           <article>
             <img
               class="md:hidden lg:hidden w-full"
-              src="./assets/images/image-meringue-mobile.jpg"
+              src="./images/image-meringue-mobile.jpg"
               alt="merginue-mobile"
             />
             <img
               class="md:block lg:hidden hidden w-full"
-              src="./assets/images/image-meringue-tablet.jpg"
+              src="./images/image-meringue-tablet.jpg"
               alt="meringue-tablet"
             />
 
             <img
               class="hidden lg:block"
-              src="./assets/images/image-meringue-desktop.jpg"
+              src="./images/image-meringue-desktop.jpg"
               alt="meringue"
             />
             <button
@@ -302,13 +301,13 @@
             >
               <img
                 class="absolute left-2"
-                src="./assets/images/icon-add-to-cart.svg"
+                src="./images/icon-add-to-cart.svg"
                 alt="cart"
               />Add to Cart
             </button>
             <div
-              class="border rounded-3xl flex justify-between items-center w-40 h-9 bg-red-500 add-qty"
-              id="Pie"
+              class="border hidden rounded-3xl flex justify-between items-center w-40 h-9 bg-red-500 add-qty"
+              id="qty-6"
             >
               <button class="m-3" id="minus-6">
                 <i class="fa-solid fa-circle-minus"></i>
@@ -329,17 +328,17 @@
           <article>
             <img
               class="md:hidden lg:hidden w-full"
-              src="./assets/images/image-cake-mobile.jpg"
+              src="./images/image-cake-mobile.jpg"
               alt="cake-mobile"
             />
             <img
               class="md:block hidden lg:hidden w-full"
-              src="./assets/images/image-cake-tablet.jpg"
+              src="./images/image-cake-tablet.jpg"
               alt="cake-tablet"
             />
             <img
               class="hidden lg:block"
-              src="./assets/images/image-cake-desktop.jpg"
+              src="./images/image-cake-desktop.jpg"
               alt="cake"
             />
             <button
@@ -352,13 +351,13 @@
             >
               <img
                 class="absolute left-2"
-                src="./assets/images/icon-add-to-cart.svg"
+                src="./images/icon-add-to-cart.svg"
                 alt="cart"
               />Add to Cart
             </button>
             <div
-              class="border rounded-3xl flex justify-between items-center w-40 h-9 bg-red-500 add-qty"
-              id="Cake"
+              class="border hidden rounded-3xl flex justify-between items-center w-40 h-9 bg-red-500 add-qty"
+              id="qty-7"
             >
               <button class="m-3" id="minus-7">
                 <i class="fa-solid fa-circle-minus"></i>
@@ -377,18 +376,18 @@
           <article>
             <img
               class="lg:hidden md:hidden w-full"
-              src="./assets/images/image-brownie-mobile.jpg"
+              src="./images/image-brownie-mobile.jpg"
               alt="brownie-mobile"
             />
             <img
               class="md:block lg:hidden hidden w-full"
-              src="./assets/images/image-brownie-tablet.jpg"
+              src="./images/image-brownie-tablet.jpg"
               alt="brownie-tablet"
             />
 
             <img
               class="hidden lg:block"
-              src="./assets/images/image-brownie-desktop.jpg"
+              src="./images/image-brownie-desktop.jpg"
               alt="brownie"
             />
             <button
@@ -401,13 +400,13 @@
             >
               <img
                 class="absolute left-2"
-                src="./assets/images/icon-add-to-cart.svg"
+                src="./images/icon-add-to-cart.svg"
                 alt="cart"
               />Add to Cart
             </button>
             <div
-              class="border rounded-3xl flex justify-between items-center w-40 h-9 bg-red-500 add-qty"
-              id="Brownie"
+              class="border hidden rounded-3xl flex justify-between items-center w-40 h-9 bg-red-500 add-qty"
+              id="qty-8"
             >
               <button class="m-3" id="minus-8">
                 <i class="fa-solid fa-circle-minus"></i>
@@ -426,17 +425,17 @@
           <article>
             <img
               class="md:hidden lg:hidden w-full"
-              src="./assets/images/image-panna-cotta-mobile.jpg"
+              src="./images/image-panna-cotta-mobile.jpg"
               alt="panna-mobile"
             />
             <img
               class="md:block lg:hidden hidden w-full"
-              src="./assets/images/image-panna-cotta-tablet.jpg"
+              src="./images/image-panna-cotta-tablet.jpg"
               alt="panna-tablet"
             />
             <img
               class="hidden lg:block"
-              src="./assets/images/image-panna-cotta-desktop.jpg"
+              src="./images/image-panna-cotta-desktop.jpg"
               alt="panna"
             />
             <button
@@ -449,13 +448,13 @@
             >
               <img
                 class="absolute left-2"
-                src="./assets/images/icon-add-to-cart.svg"
+                src="./images/icon-add-to-cart.svg"
                 alt="cart"
               />Add to Cart
             </button>
             <div
-              class="border rounded-3xl flex justify-between items-center w-40 h-9 bg-red-500 add-qty"
-              id="Panna"
+              class="border hidden rounded-3xl flex justify-between items-center w-40 h-9 bg-red-500 add-qty"
+              id="qty-9"
             >
               <button class="m-3" id="minus-9">
                 <i class="fa-solid fa-circle-minus"></i>
@@ -481,7 +480,7 @@
           <div id="empty" class="flex-col flex items-center justify-center">
             <img
               class="h-37.5"
-              src="/assets/images/illustration-empty-cart.svg"
+              src="/images/illustration-empty-cart.svg"
               alt="empty-cart"
             />
             <p>Your added items will appear here</p>
@@ -499,7 +498,7 @@
             </div>
             <div class="flex flex-row items-center justify-center m-5">
               <img
-                src="/assets/images/icon-carbon-neutral.svg"
+                src="./images/icon-carbon-neutral.svg"
                 alt="carbon-netural"
               />
               <p>
@@ -518,6 +517,37 @@
         </div>
       </section>
     </main>
+    <div
+      id="order-model"
+      class="fixed inset-0 bg-black/50 flex flex-col items-center justify-center hidden z-50 p-4"
+    >
+      <div
+        class="bg-white p-8 rounded-lg max-w-md w-full max-h-[90vh] overflow-y-auto"
+      >
+        <img
+          src="/images/icon-order-confirmed.svg"
+          alt="order-confirm"
+          class="w-10 mb-4"
+        />
+        <h1 class="font-bold text-3xl text-stone-900">Order Confirmed</h1>
+        <p class="text-gray-500 mb-6">We hope you enjoy your food!</p>
+
+        <ul
+          id="modal-order-list"
+          class="p-5 mb-5 w-full divide-y divide-gray-300"
+        ></ul>
+        <div class="flex justify-between">
+          <h1>Order Total</h1>
+          <span id="total"></span>
+        </div>
+        <button
+          id="new-order"
+          class="w-full bg-red-600 text-white rounded-full py-3 mt-6 font-bold"
+        >
+          Start New Order
+        </button>
+      </div>
+    </div>
     <script src="app.js"></script>
   </body>
 </html>
