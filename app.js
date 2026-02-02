@@ -11,11 +11,11 @@ cart_list.classList.add("hidden");
 function add_product() {
   for (let btn of add_button) {
     btn.onclick = function () {
+      btn.classList.add("hidden");
       let product_id = btn.getAttribute("data-id");
       let product_name = btn.getAttribute("data-product");
       let price = Number(btn.getAttribute("data-price"));
       let item_count_display = document.getElementById("order");
-
       let product_data = {
         product_id,
         product: product_name,
@@ -115,6 +115,10 @@ function deleteOrder(id) {
       let add_id = `add-${product.product_id}`;
       let increase = document.getElementById(add_id);
       increase.previousElementSibling.innerText = 0;
+      let originalAddBtn = document.querySelector(`[data-id="${id}"]`);
+      if (originalAddBtn) {
+        originalAddBtn.classList.remove("hidden");
+      }
       item_count.innerText = count;
       product.quantity = 0;
       products.splice(deleteIndex, 1);
